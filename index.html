@@ -352,6 +352,31 @@
     font-size:.72rem;
     text-align:center;
   }
+  .pw-input{
+    width:100%;
+    min-height:52px;
+    padding:14px 16px;
+    font-size:1.1rem;
+    font-family:inherit;
+    border-radius:14px;
+    border:2px solid rgba(232,184,75,.35);
+    background: rgba(0,0,0,.25);
+    color:var(--cream);
+    margin-bottom:14px;
+    text-align:center;
+    direction:ltr;
+  }
+  .pw-input:focus{
+    outline:none;
+    border-color: var(--gold-bright);
+  }
+  .pw-error{
+    color:var(--danger);
+    font-size:.9rem;
+    text-align:center;
+    margin-bottom:12px;
+    min-height:1.2em;
+  }
 </style>
 </head>
 <body>
@@ -368,6 +393,7 @@ const FA_DIGITS = {'0':'۰','1':'۱','2':'۲','3':'۳','4':'۴','5':'۵','6':'۶
 function fa(n){ return String(n).split('').map(c => FA_DIGITS[c] !== undefined ? FA_DIGITS[c] : c).join(''); }
 
 const TOTAL_SECONDS = 10 * 60;
+const APP_PASSWORD = "mani1391";
 
 let state = {
   playerCount: null,
@@ -406,6 +432,45 @@ function render(screenEl){
   clearApp();
   screenEl.classList.add('screen', 'active');
   app.appendChild(screenEl);
+}
+
+/* ---------------------------------------------------------
+   SCREEN 0: password gate
+--------------------------------------------------------- */
+function screenPassword(){
+  const wrap = el('div');
+  wrap.appendChild(el('div', {cls:'emoji-hero', text:'🔒'}));
+  wrap.appendChild(el('h1', {cls:'title', text:'ورود به بازی'}));
+  wrap.appendChild(el('div', {cls:'subtitle', text:'لطفاً رمز عبور را وارد کنید'}));
+
+  const panel = el('div', {cls:'card-panel'});
+  panel.appendChild(el('div', {cls:'field-label', text:'رمز عبور'}));
+
+  const input = el('input', {cls:'pw-input', attrs:{type:'password', placeholder:'رمز عبور را وارد کنید', autocomplete:'off', inputmode:'text'}});
+  panel.appendChild(input);
+
+  const errorMsg = el('div', {cls:'pw-error', text:''});
+  panel.appendChild(errorMsg);
+
+  const submitBtn = el('button', {cls:'btn', text:'🔓 ورود'});
+  function tryEnter(){
+    if(input.value === APP_PASSWORD){
+      screenSetup();
+    } else {
+      errorMsg.textContent = 'رمز عبور اشتباه است. دوباره تلاش کنید.';
+      input.value = '';
+      input.focus();
+    }
+  }
+  submitBtn.addEventListener('click', tryEnter);
+  input.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter') tryEnter();
+  });
+  panel.appendChild(submitBtn);
+  wrap.appendChild(panel);
+
+  render(wrap);
+  setTimeout(() => input.focus(), 50);
 }
 
 /* ---------------------------------------------------------
@@ -682,10 +747,10 @@ function screenReveal(boxNum){
 /* ---------------------------------------------------------
    init
 --------------------------------------------------------- */
-screenSetup();
+screenPassword();
 
 })();
 
 </script>
 </body>
-</html> 
+</html>
