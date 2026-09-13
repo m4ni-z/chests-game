@@ -1,144 +1,144 @@
-# 🎁 بازی صندوق‌ها
+# 🎁 Treasure Chest Game
 
-## 🎯 هدف بازی
+## 🎯 Objective
 
-در بازی چند صندوق وجود دارد و **فقط یکی از آن‌ها گنج دارد**.
+In this game, there are several chests, and **exactly one of them contains the treasure**.
 
-بازیکنان باید با استفاده از اطلاعاتی که هرکدام در اختیار دارند، با هم **بحث و استدلال کنند** و در پایان حدس بزنند گنج داخل کدام صندوق است.
+Players must use the information available to each of them to **discuss, reason, and work together** to determine which chest contains the treasure.
 
-اگر درست حدس بزنند، برنده می‌شوند؛ اگر اشتباه کنند، می‌بازند.
-
----
-
-## 👥 تعداد بازیکنان
-
-بازی برای **۲ تا ۸ نفر** طراحی شده است.
-
-تعداد صندوق‌ها برابر با تعداد بازیکنان است.
-
-مثلاً:
-
-* ۲ بازیکن → ۲ صندوق
-* ۳ بازیکن → ۳ صندوق
-* ۵ بازیکن → ۵ صندوق
-* ۸ بازیکن → ۸ صندوق
+If they guess correctly, they win. If they guess incorrectly, they lose.
 
 ---
 
-## 📦 صندوق‌ها
+## 👥 Number of Players
 
-هر صندوق یک **جمله** دارد.
+The game is designed for **2 to 8 players**.
 
-مثلاً:
+The number of chests is equal to the number of players.
 
-**صندوق ۱:**
+For example:
 
-> گنج داخل صندوق ۲ نیست.
-
-**صندوق ۲:**
-
-> گنج داخل صندوق ۱ است.
-
-**صندوق ۳:**
-
-> گنج داخل صندوق ۳ نیست.
-
-هر جمله می‌تواند **راست یا دروغ** باشد.
+* 2 players → 2 chests
+* 3 players → 3 chests
+* 5 players → 5 chests
+* 8 players → 8 chests
 
 ---
 
-## 👀 اطلاعات بازیکنان
+## 📦 Chests
 
-در شروع بازی، هر بازیکن همه‌ی صندوق‌ها را می‌بیند، اما فقط جمله‌ی بعضی از صندوق‌ها برایش مشخص است.
+Each chest has **one statement**.
 
-بقیه‌ی صندوق‌ها به شکل **؟** نمایش داده می‌شوند.
+For example:
 
-مثلاً برای ۳ بازیکن:
+**Chest 1:**
 
-### بازیکن ۱
+> The treasure is not in Chest 2.
+
+**Chest 2:**
+
+> The treasure is in Chest 1.
+
+**Chest 3:**
+
+> The treasure is not in Chest 3.
+
+Each statement can be **true or false**.
+
+---
+
+## 👀 Players' Information
+
+At the beginning of the game, every player can see all the chests, but only the statements of certain chests are revealed to them.
+
+The other chests are displayed as **?**.
+
+For example, with 3 players:
+
+### Player 1
 
 ```text
-📦 صندوق ۱ → ؟
-📦 صندوق ۲ → «گنج در صندوق ۱ نیست.»
-📦 صندوق ۳ → ؟
+📦 Chest 1 → ?
+📦 Chest 2 → "The treasure is not in Chest 1."
+📦 Chest 3 → ?
 ```
 
-### بازیکن ۲
+### Player 2
 
 ```text
-📦 صندوق ۱ → «گنج در صندوق ۲ است.»
-📦 صندوق ۲ → ؟
-📦 صندوق ۳ → ؟
+📦 Chest 1 → "The treasure is in Chest 2."
+📦 Chest 2 → ?
+📦 Chest 3 → ?
 ```
 
-### بازیکن ۳
+### Player 3
 
 ```text
-📦 صندوق ۱ → ؟
-📦 صندوق ۲ → ؟
-📦 صندوق ۳ → «گنج در صندوق ۳ نیست.»
+📦 Chest 1 → ?
+📦 Chest 2 → ?
+📦 Chest 3 → "The treasure is not in Chest 3."
 ```
 
-**هر جمله فقط به یک بازیکن داده می‌شود.**
+**Each statement is given to exactly one player.**
 
-بنابراین در پایان، تمام جمله‌های صندوق‌ها بین بازیکنان پخش شده‌اند و هیچ جمله‌ای دوبار داده نمی‌شود.
-
----
-
-## 🗣️ مرحله‌ی بحث
-
-بعد از شروع بازی، یک زمان مشخص برای بحث وجود دارد.
-
-مثلاً:
-
-**⏱️ ۶۰ ثانیه**
-
-هر بازیکن می‌تواند جمله‌هایی را که دارد برای بقیه بخواند.
-
-بازیکنان باید اطلاعات خود را با هم ترکیب کنند و بفهمند کدام صندوق گنج دارد.
+Therefore, by the end, all statements from all chests are distributed among the players, and no statement is given to more than one player.
 
 ---
 
-## 🤔 راست یا دروغ؟
+## 🗣️ Discussion Phase
 
-بازیکنان نمی‌دانند جمله‌های روی صندوق‌ها راست هستند یا دروغ.
+After the game starts, there is a limited amount of time for discussion.
 
-باید با کنار هم گذاشتن همه‌ی جمله‌ها و استدلال کردن، بفهمند **کدام حالت ممکن است**.
+For example:
 
----
+**⏱️ 60 seconds**
 
-## 🏁 انتخاب نهایی
+Each player can read the statements they have to the others.
 
-وقتی زمان تمام شد، بازیکنان باید یک صندوق را به عنوان جواب انتخاب کنند.
-
-مثلاً:
-
-> «ما فکر می‌کنیم گنج داخل صندوق ۲ است.»
-
-سپس جواب مشخص می‌شود.
-
-### اگر درست باشد:
-
-🏆 **گنج پیدا شد! شما برنده شدید.**
-
-### اگر اشتباه باشد:
-
-💥 **اشتباه کردید! شما باختید.**
+The players must combine their information and reason together to determine which chest contains the treasure.
 
 ---
 
-## 🔄 هر دور متفاوت است
+## 🤔 True or False?
 
-جمله‌ها در هر دور دوباره تولید می‌شوند.
+Players do not know whether the statements written on the chests are true or false.
 
-بنابراین بازی همیشه یک معمای یکسان ندارد.
-
-همچنین جمله‌ها بین بازیکنان به شکل تصادفی تقسیم می‌شوند؛ بنابراین در هر دور ممکن است هر بازیکن اطلاعات متفاوتی داشته باشد.
+They must combine all the statements and use logical reasoning to determine **which possibility is valid**.
 
 ---
 
-## ⭐ قانون اصلی بازی
+## 🏁 Final Choice
 
-> **هر صندوق دقیقاً یک جمله دارد و هر جمله دقیقاً در اختیار یک بازیکن قرار می‌گیرد.**
+When the time runs out, the players must choose one chest as their final answer.
 
-بازیکنان باید اطلاعات پراکنده‌ی خود را کنار هم بگذارند تا گنج را پیدا کنند.
+For example:
+
+> "We think the treasure is in Chest 2."
+
+Then the actual answer is revealed.
+
+### If they are correct:
+
+🏆 **You found the treasure! You win!**
+
+### If they are wrong:
+
+💥 **Wrong answer! You lose!**
+
+---
+
+## 🔄 A Different Game Every Round
+
+The statements are generated again for every round.
+
+Therefore, the game does not always have the same puzzle.
+
+The statements are also randomly distributed among the players, so each player may have different information in every round.
+
+---
+
+## ⭐ Main Rule
+
+> **Each chest has exactly one statement, and each statement is given to exactly one player.**
+
+The players must combine their scattered information and reason together to find the treasure.
